@@ -6,14 +6,14 @@ import android.content.SharedPreferences;
 /**
  * <pre>
  * ###############################################################################
- * Preference °ü¸®ÇÏ´Â À¯Æ¿ Å¬·¡½º
+ * Preference ì‚¬ìš© ìœ í‹¸ í´ë˜ìŠ¤
  * ###############################################################################
  * </pre>
  */
 public final class PreferenceUtil {
 
 	/**
-	 * ÀúÀå
+	 * ì €ì¥í•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
@@ -37,11 +37,11 @@ public final class PreferenceUtil {
 	}
 
 	/**
-	 * ÀĞ±â
+	 * ì¡°íšŒí•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
-	 * @return String Å¸ÀÔÀÇ °ª
+	 * @return String ì¡°íšŒê°’
 	 */
 	public static String readString(Context ctx, String prefName, String key) {
 		SharedPreferences prefs = ctx.getSharedPreferences(prefName, Context.MODE_PRIVATE);
@@ -50,11 +50,11 @@ public final class PreferenceUtil {
 	}
 	
 	/**
-	 * ÀĞ±â
+	 * ì¡°íšŒí•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
-	 * @return long Å¸ÀÔÀÇ °ª
+	 * @return long ì¡°íšŒê°’
 	 */
 	public static long readLong(Context ctx, String prefName, String key) {
 		SharedPreferences prefs = ctx.getSharedPreferences(prefName, Context.MODE_PRIVATE);
@@ -63,11 +63,11 @@ public final class PreferenceUtil {
 	}
 	
 	/**
-	 * ÀĞ±â
+	 * ì¡°íšŒí•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
-	 * @return float Å¸ÀÔÀÇ °ª
+	 * @return float ì¡°íšŒê°’
 	 */
 	public static float readFloat(Context ctx, String prefName, String key) {
 		SharedPreferences prefs = ctx.getSharedPreferences(prefName, Context.MODE_PRIVATE);
@@ -76,11 +76,11 @@ public final class PreferenceUtil {
 	}
 	
 	/**
-	 * ÀĞ±â
+	 * ì¡°íšŒí•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
-	 * @return int Å¸ÀÔÀÇ °ª
+	 * @return int ì¡°íšŒê°’
 	 */
 	public static int readInt(Context ctx, String prefName, String key) {
 		SharedPreferences prefs = ctx.getSharedPreferences(prefName, Context.MODE_PRIVATE);
@@ -89,11 +89,11 @@ public final class PreferenceUtil {
 	}
 	
 	/**
-	 * ÀĞ±â
+	 * ì¡°íšŒí•˜ê¸°
 	 * @param ctx
 	 * @param prefName
 	 * @param key
-	 * @return boolean Å¸ÀÔÀÇ °ª
+	 * @return boolean ì¡°íšŒê°’
 	 */
 	public static boolean readBoolean(Context ctx, String prefName, String key) {
 		SharedPreferences prefs = ctx.getSharedPreferences(prefName, Context.MODE_PRIVATE);

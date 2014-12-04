@@ -3,16 +3,16 @@ package kr.or.jaspersoft.android.talkplaza.common.obj;
 /**
  * <pre>
  * ##################################################################
- * Activity ¸ŞÅ¸ µ¥ÀÌÅÍ Å¬·¡½º
+ * Activity ë©”íƒ€ ë°ì´í„° í´ë˜ìŠ¤
  * ##################################################################
  * </pre>
  */
 public class ActivityMetaData {
-	/** Activity Å¬·¡½º ¸íÄª(ÆĞÅ°Áö Æ÷ÇÔ) */
+	/** Activity í´ë˜ìŠ¤ ëª…(íŒ¨í‚¤ì§€ í¬í•¨) */
 	public String fullName = "";
-	/** È¸¿ø °¡ÀÔÀÌ ÇÊ¿ä ¿©ºÎ */
+	/** íšŒì›ê°€ì… í•„ìš” */
 	public boolean requiredJoin = false;
-	/** ·Î±×ÀÎ ÇÊ¿ä ¿©ºÎ */
+	/** ë¡œê·¸ì¸ í•„ìš” */
 	public boolean requiredLogin = false;
 	
 	public ActivityMetaData(String fullName, boolean requiredJoin, boolean requiredLogin) {

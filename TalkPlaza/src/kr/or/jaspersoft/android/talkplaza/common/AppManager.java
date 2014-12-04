@@ -20,20 +20,20 @@ import android.content.Context;
 /**
  * <pre>
  * ##################################################################
- * ¾Û °ü¸® Å¬·¡½º
+ * ì•± ê´€ë¦¬ í´ë˜ìŠ¤
  * ##################################################################
  * </pre>
  */
 public final class AppManager {
-	/** ÀúÀå¼Ò ¸íÄª */
+	/** ì €ì¥ì†Œ ëª…ì¹­ */
 	private static final String PREF_NAME = "__pref_name__";
-	/** »ç¿ëÀÚ ¾ÆÀÌµğ Å° */
+	/** ì‚¬ìš©ì ì•„ì´ë”” í‚¤ */
 	private static final String KEY_USER_ID = "__key_user_id__";
-	/** È¸¿ø °¡ÀÔ ¿©ºÎ Å° */
+	/** íšŒì›ê°€ì… ì—¬ë¶€ í‚¤ */
 	private static final String KEY_JOIN = "__key_join__";
-	/** ·Î±×ÀÎ ¿©ºÎ Å° */
+	/** ë¡œê·¸ì¸ ì—¬ë¶€ í‚¤ */
 	private static final String KEY_LOGIN = "__key_login__";
-	/** activity ¸ŞÅ¸ µ¥ÀÌÅÍ */
+	/** activity ë©”íƒ€ ë°ì´í„° */
 	private static Map<String, ActivityMetaData> activityMetaDatas = new HashMap<String, ActivityMetaData>();
 	
 	static {
@@ -59,37 +59,37 @@ public final class AppManager {
 				new ActivityMetaData(TalkWriteActivity.class.getName(), true, true));
 	}
 	
-	/** »ç¿ëÀÚ ¾ÆÀÌµğ ÀúÀå */
+	/** ì‚¬ìš©ì ì•„ì´ë”” ì €ì¥ */
 	public static void setUserId(Context ctx, String userId) {
 		PreferenceUtil.save(ctx, PREF_NAME, KEY_USER_ID, userId);
 	}
 	
-	/** »ç¿ëÀÚ ¾ÆÀÌµğ Á¶È¸ */
+	/** ì‚¬ìš©ì ì•„ì´ë”” ì¡°íšŒ */
 	public static String getUserId(Context ctx) {
 		return PreferenceUtil.readString(ctx, PREF_NAME, KEY_USER_ID);
 	}
 	
-	/** È¸¿ø °¡ÀÔ ¿©ºÎ ÀúÀå */
+	/** íšŒì›ê°€ì… ì—¬ë¶€ ì €ì¥ */
 	public static void setJoin(Context ctx, boolean isJoin) {
 		PreferenceUtil.save(ctx, PREF_NAME, KEY_JOIN, isJoin);
 	}
 	
-	/** È¸¿ø °¡ÀÔ ¿©ºÎ Á¶È¸ */
+	/** íšŒì›ê°€ì… ì—¬ë¶€ ì¡°íšŒ */
 	public static boolean isJoin(Context ctx) {
 		return PreferenceUtil.readBoolean(ctx, PREF_NAME, KEY_JOIN);
 	}
 	
-	/** ·Î±×ÀÎ ¿©ºÎ ÀúÀå */
+	/** ë¡œê·¸ì¸ ì—¬ë¶€ ì €ì¥ */
 	public static void setLogin(Context ctx, boolean isLogin) {
 		PreferenceUtil.save(ctx, PREF_NAME, KEY_LOGIN, isLogin);
 	}
 	
-	/** ·Î±×ÀÎ ¿©ºÎ Á¶È¸ */
+	/** ë¡œê·¸ì¸ ì—¬ë¶€ ì¡°íšŒ */
 	public static boolean isLogin(Context ctx) {
 		return PreferenceUtil.readBoolean(ctx, PREF_NAME, KEY_LOGIN);
 	}
 	
-	/** Activity ¸ŞÅ¸ µ¥ÀÌÅÍ Á¶È¸ */
+	/** Activity ë©”íƒ€ ë°ì´í„° ì¡°íšŒ */
 	public static ActivityMetaData getActivityMetaData(String activityFullName) {
 		return activityMetaDatas.get(activityFullName);
 	}
