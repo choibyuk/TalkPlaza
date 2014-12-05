@@ -1,4 +1,4 @@
-package kr.or.jaspersoft.android.talkplaza.common;
+package kr.or.jaspersoft.android.talkplaza.common.ref;
 
 import java.util.HashMap;
 import java.util.Map;
