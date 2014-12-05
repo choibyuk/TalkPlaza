@@ -15,7 +15,10 @@ import kr.or.jaspersoft.android.talkplaza.act.TalkSubjectActivity;
 import kr.or.jaspersoft.android.talkplaza.act.TalkWriteActivity;
 import kr.or.jaspersoft.android.talkplaza.common.obj.ActivityMetaData;
 import kr.or.jaspersoft.android.talkplaza.common.util.PreferenceUtil;
+import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 
 /**
  * <pre>
@@ -92,5 +95,25 @@ public final class AppManager {
 	/** Activity 메타 데이터 조회 */
 	public static ActivityMetaData getActivityMetaData(String activityFullName) {
 		return activityMetaDatas.get(activityFullName);
+	}
+	
+	/** 액티비티 실행 */
+	public static void startActivity(Activity activity, Intent intent) {
+		ComponentName targetComponent = intent.getComponent();
+		String activityFullName = targetComponent.getClassName();
+		ActivityMetaData metaData = AppManager.getActivityMetaData(activityFullName);
+		;
+		if (metaData.requiredJoin && !AppManager.isJoin(activity)) {
+			//TODO 회원 가입 페이지로 이동
+			activity.finish();
+			return;
+		}
+		if (metaData.requiredLogin && !AppManager.isLogin(activity)) {
+			//TODO 로그인 페이지로 이동
+			activity.finish();
+			return;
+		}
+		activity.startActivity(intent);
+		activity.finish();
 	}
 }

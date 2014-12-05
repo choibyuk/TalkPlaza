@@ -4,24 +4,24 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="15" />
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="15" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".act.SplashActivity"
-            android:label="@string/app_name" >
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme" >
+        <activity android:name=".act.SplashActivity" android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".act.AppProcessActivity" android:label="@string/app_name" />
+        <activity android:name=".act.MemberJoinActivity" android:label="@string/app_name" />
+        <activity android:name=".act.MemberLoginActivity" android:label="@string/app_name" />
+        <activity android:name=".act.MemberProfileActivity" android:label="@string/app_name" />
+        <activity android:name=".act.TalkDetailViewActivity" android:label="@string/app_name" />
+        <activity android:name=".act.TalkGraphViewActivity" android:label="@string/app_name" />
+        <activity android:name=".act.TalkPlazaActivity" android:label="@string/app_name" />
+        <activity android:name=".act.TalkSubjectActivity" android:label="@string/app_name" />
+        <activity android:name=".act.TalkWriteActivity" android:label="@string/app_name" />
     </application>
 
 </manifest>

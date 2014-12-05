@@ -14,7 +14,16 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class layout {
-        public static final int activity_splash=0x7f030000;
+        public static final int activity_join=0x7f030000;
+        public static final int activity_login=0x7f030001;
+        public static final int activity_process=0x7f030002;
+        public static final int activity_profile=0x7f030003;
+        public static final int activity_splash=0x7f030004;
+        public static final int activity_talkdetail=0x7f030005;
+        public static final int activity_talkgraph=0x7f030006;
+        public static final int activity_talkplaza=0x7f030007;
+        public static final int activity_talksubject=0x7f030008;
+        public static final int activity_talkwrite=0x7f030009;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
@@ -22,27 +31,11 @@ public final class R {
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
- <style name="AppBaseTheme" parent="Theme.AppCompat.Light"> 
-
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- <style name="AppBaseTheme" parent="Theme.AppCompat.Light"> 
  API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"> 
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f050000;
