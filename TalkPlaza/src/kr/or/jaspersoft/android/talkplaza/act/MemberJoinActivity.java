@@ -2,7 +2,13 @@ package kr.or.jaspersoft.android.talkplaza.act;
 
 import kr.or.jaspersoft.android.talkplaza.R;
 import kr.or.jaspersoft.android.talkplaza.common.core.BaseActivity;
+import kr.or.jaspersoft.android.talkplaza.common.ref.AppManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * <pre>
@@ -11,11 +17,70 @@ import android.os.Bundle;
  * ##################################################################
  * </pre>
  */
-public class MemberJoinActivity extends BaseActivity {
+public class MemberJoinActivity extends BaseActivity implements OnClickListener {
+	
+	static EditText mEtUserId;
+	static EditText mEtUserPassword;
+	static EditText mEtUserPasswordConfirm;
+	static EditText mEtUserName;
+	static Button mLogin;
+	static Button mConfirm;
+	static Button mCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
+        
+        mEtUserId = (EditText) findViewById(R.id.et_user_id);
+        mEtUserPassword = (EditText) findViewById(R.id.et_user_password);
+        mEtUserPasswordConfirm = (EditText) findViewById(R.id.et_user_password_confirm);
+        mEtUserName = (EditText) findViewById(R.id.et_user_name);
+        
+        mLogin = (Button) findViewById(R.id.btn_login);
+        mConfirm = (Button) findViewById(R.id.btn_confirm);
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mLogin.setOnClickListener(this);
+        mConfirm.setOnClickListener(this);
+        mCancel.setOnClickListener(this);
+    }
+    
+    @Override
+	public void onClick(View v) {
+    	Intent intent = null;
+    	
+    	switch (v.getId()) {
+    	//
+    	// 로그인 페이지 가기
+    	//
+    	case R.id.btn_login:
+    		intent = new Intent(globalContext, MemberLoginActivity.class);
+    		AppManager.startActivity(MemberJoinActivity.this, intent, true);
+    		break;
+    	//
+    	// 회원 가입하기
+    	//
+    	case R.id.btn_confirm:
+    		final String userId = mEtUserId.getText().toString().trim();
+    		if (!isValidUserId(userId)) {
+    			mEtUserId.setError("제대로 입력해라....");
+    			return;
+    		}
+    		//TODO 회원 가입 프로세스 개발
+    		intent = new Intent(globalContext, TalkPlazaActivity.class);
+    		AppManager.startActivity(MemberJoinActivity.this, intent, true);
+    		break;
+		//
+		// 회원 가입 취소하기
+		//
+    	case R.id.btn_cancel:
+    		intent = new Intent(globalContext, TalkPlazaActivity.class);
+    		AppManager.startActivity(MemberJoinActivity.this, intent, true);
+    		break;
+    	}
+	}
+    
+    private boolean isValidUserId(String userId) {
+    	return false;
     }
 }

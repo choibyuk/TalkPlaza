@@ -4,9 +4,55 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
+    <EditText
+        android:id="@+id/et_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Member Join" />
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_user_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_id"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/et_user_password_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_password"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_password_confirm"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="text" />
+
+    <Button
+		android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_name"
+        android:text="@string/member_login" />
+    <Button
+		android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:text="@string/confirm" />
+    <Button
+		android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_confirm"
+        android:text="@string/cancel" />
 
 </RelativeLayout>

@@ -99,21 +99,30 @@ public final class AppManager {
 	
 	/** 액티비티 실행 */
 	public static void startActivity(Activity activity, Intent intent) {
+		AppManager.startActivity(activity, intent, true);
+	}
+	
+	/** 액티비티 실행 */
+	public static void startActivity(Activity activity, Intent intent, boolean finishActivity) {
 		ComponentName targetComponent = intent.getComponent();
 		String activityFullName = targetComponent.getClassName();
 		ActivityMetaData metaData = AppManager.getActivityMetaData(activityFullName);
 		;
 		if (metaData.requiredJoin && !AppManager.isJoin(activity)) {
-			//TODO 회원 가입 페이지로 이동
+			Intent joinIntent = new Intent(activity, MemberJoinActivity.class);
+			activity.startActivity(joinIntent);
 			activity.finish();
 			return;
 		}
 		if (metaData.requiredLogin && !AppManager.isLogin(activity)) {
-			//TODO 로그인 페이지로 이동
+			Intent loginIntent = new Intent(activity, MemberLoginActivity.class);
+			activity.startActivity(loginIntent);
 			activity.finish();
 			return;
 		}
 		activity.startActivity(intent);
-		activity.finish();
+		if (finishActivity) {
+			activity.finish();			
+		}
 	}
 }

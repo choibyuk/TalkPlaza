@@ -13,6 +13,22 @@ public final class R {
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
+    public static final class id {
+        public static final int btn_cancel=0x7f060006;
+        public static final int btn_confirm=0x7f060005;
+        public static final int btn_join=0x7f060007;
+        public static final int btn_login=0x7f060004;
+        public static final int btn_talk_write=0x7f06000b;
+        public static final int et_user_id=0x7f060000;
+        public static final int et_user_name=0x7f060003;
+        public static final int et_user_password=0x7f060001;
+        public static final int et_user_password_confirm=0x7f060002;
+        public static final int ll_header=0x7f060008;
+        public static final int lv_talk_list=0x7f06000c;
+        public static final int tv_dummy=0x7f06000a;
+        public static final int tv_talk_content=0x7f06000d;
+        public static final int tv_user_name=0x7f060009;
+    }
     public static final class layout {
         public static final int activity_join=0x7f030000;
         public static final int activity_login=0x7f030001;
@@ -24,10 +40,19 @@ public final class R {
         public static final int activity_talkplaza=0x7f030007;
         public static final int activity_talksubject=0x7f030008;
         public static final int activity_talkwrite=0x7f030009;
+        public static final int adapter_talk_list_item=0x7f03000a;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
-        public static final int hello_world=0x7f040001;
+        public static final int app_name=0x7f040005;
+        public static final int cancel=0x7f040004;
+        public static final int confirm=0x7f040003;
+        public static final int hello_world=0x7f040006;
+        public static final int member_join=0x7f040001;
+        public static final int member_login=0x7f040002;
+        /**  common image view description 
+         */
+        public static final int simple_desc=0x7f040007;
+        public static final int talk_shouting=0x7f040000;
     }
     public static final class style {
         /** 

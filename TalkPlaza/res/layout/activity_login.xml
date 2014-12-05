@@ -4,9 +4,39 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
+    <EditText
+        android:id="@+id/et_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Member Log In" />
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_user_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_id"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="textPassword" />
+
+    <Button
+		android:id="@+id/btn_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_password"
+        android:text="@string/member_join" />
+    <Button
+		android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_join"
+        android:text="@string/confirm" />
+    <Button
+		android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_confirm"
+        android:text="@string/cancel" />
 
 </RelativeLayout>

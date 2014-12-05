@@ -3,10 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
-
-    <TextView
-        android:layout_width="wrap_content"
+    
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Talk Plaza" />
+        android:padding="4dp" >
+        <TextView
+            android:id="@+id/tv_user_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_join"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/member_join" />
+        <Button
+            android:id="@+id/btn_login"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/member_login" />
+        <TextView
+            android:id="@+id/tv_dummy"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_talk_write"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/talk_shouting" />
+	    </LinearLayout>
+
+    <ListView
+		android:id="@+id/lv_talk_list"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/ll_header"
+		android:scrollbars="none"
+		android:divider="#dbdbdbff"
+		android:dividerHeight="0.1dp"
+		android:focusable="false"
+		android:fadingEdge="none"
+		android:fadingEdgeLength="0px"
+		android:fastScrollEnabled="true"
+		android:cacheColorHint="#00000000"
+		android:persistentDrawingCache="animation|scrolling" />
 
 </RelativeLayout>
