@@ -23,9 +23,9 @@ public class MemberJoinActivity extends BaseActivity implements OnClickListener 
 	static EditText mEtUserPassword;
 	static EditText mEtUserPasswordConfirm;
 	static EditText mEtUserName;
-	static Button mLogin;
-	static Button mConfirm;
-	static Button mCancel;
+	static Button mBtnLogin;
+	static Button mBtnConfirm;
+	static Button mBtnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +37,12 @@ public class MemberJoinActivity extends BaseActivity implements OnClickListener 
         mEtUserPasswordConfirm = (EditText) findViewById(R.id.et_user_password_confirm);
         mEtUserName = (EditText) findViewById(R.id.et_user_name);
         
-        mLogin = (Button) findViewById(R.id.btn_login);
-        mConfirm = (Button) findViewById(R.id.btn_confirm);
-        mCancel = (Button) findViewById(R.id.btn_cancel);
-        mLogin.setOnClickListener(this);
-        mConfirm.setOnClickListener(this);
-        mCancel.setOnClickListener(this);
+        mBtnLogin = (Button) findViewById(R.id.btn_login);
+        mBtnConfirm = (Button) findViewById(R.id.btn_confirm);
+        mBtnCancel = (Button) findViewById(R.id.btn_cancel);
+        mBtnLogin.setOnClickListener(this);
+        mBtnConfirm.setOnClickListener(this);
+        mBtnCancel.setOnClickListener(this);
     }
     
     @Override

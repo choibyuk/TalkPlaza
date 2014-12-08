@@ -4,9 +4,25 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
+    <EditText
+        android:id="@+id/et_talk_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:singleLine="false"
+        android:lines="4"
+        android:inputType="textMultiLine" />
+    <Button
+		android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Talk Write" />
+        android:layout_below="@id/et_talk_content"
+        android:text="@string/confirm" />
+    <Button
+		android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_confirm"
+        android:text="@string/cancel" />
 
 </RelativeLayout>

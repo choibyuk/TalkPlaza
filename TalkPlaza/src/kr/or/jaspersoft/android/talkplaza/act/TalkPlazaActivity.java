@@ -5,9 +5,11 @@ import java.util.List;
 
 import kr.or.jaspersoft.android.talkplaza.R;
 import kr.or.jaspersoft.android.talkplaza.common.core.BaseActivity;
+import kr.or.jaspersoft.android.talkplaza.common.core.Constant;
 import kr.or.jaspersoft.android.talkplaza.common.obj.Talk;
 import kr.or.jaspersoft.android.talkplaza.common.ref.AppManager;
 import kr.or.jaspersoft.android.talkplaza.common.ref.HttpAgent;
+import kr.or.jaspersoft.android.talkplaza.common.util.LogUtil;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -27,7 +31,7 @@ import android.widget.TextView;
  * ##################################################################
  * </pre>
  */
-public class TalkPlazaActivity extends BaseActivity implements OnClickListener {
+public class TalkPlazaActivity extends BaseActivity implements OnClickListener, OnItemClickListener {
 	
 	static ListView mTalkList;
 	static TalkAdapter mTalkAdapter;
@@ -40,9 +44,14 @@ public class TalkPlazaActivity extends BaseActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_talkplaza);
         
+        AppManager.setUserId(globalContext, "system");
+        AppManager.setJoin(globalContext, true);
+        AppManager.setLogin(globalContext, true);
+        
         mTalkList = (ListView) findViewById(R.id.lv_talk_list);
         mTalkAdapter = new TalkAdapter();
         mTalkList.setAdapter(mTalkAdapter);
+        mTalkList.setOnItemClickListener(this);
         
         mBtnTalkWrite = (Button) findViewById(R.id.btn_talk_write);
         mBtnJoin = (Button) findViewById(R.id.btn_join);
@@ -63,13 +72,16 @@ public class TalkPlazaActivity extends BaseActivity implements OnClickListener {
     	// 수다 작성하러 가기
     	//
     	case R.id.btn_talk_write:
+    		LogUtil.log("수다 작성가기");
     		intent = new Intent(globalContext, TalkWriteActivity.class);
+    		intent.putExtra(Constant.TALK, new Talk());// shouting 경우 수다 빈 객체
     		AppManager.startActivity(TalkPlazaActivity.this, intent, true);
     		break;
 		//
 		// 회원 가입하러 가기
 		//
     	case R.id.btn_join:
+    		LogUtil.log("회원가입 가기");
     		intent = new Intent(globalContext, MemberJoinActivity.class);
     		AppManager.startActivity(TalkPlazaActivity.this, intent, true);
     		break;
@@ -77,12 +89,20 @@ public class TalkPlazaActivity extends BaseActivity implements OnClickListener {
 		// 로그인하러 가기
 		//
     	case R.id.btn_login:
+    		LogUtil.log("로그인 가기");
     		intent = new Intent(globalContext, MemberLoginActivity.class);
     		AppManager.startActivity(TalkPlazaActivity.this, intent, true);
     		break;
     	}
 	}
     
+    @Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Talk talk = (Talk) parent.getAdapter().getItem(position);
+		Intent intent = new Intent(globalContext, TalkDetailViewActivity.class);
+		intent.putExtra(Constant.TALK, talk);
+		AppManager.startActivity(TalkPlazaActivity.this, intent, true);
+	}
     
     /** Talk List View Adapter */
     static class TalkAdapter extends BaseAdapter {

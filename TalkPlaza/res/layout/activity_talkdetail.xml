@@ -1,12 +1,59 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
-
-    <TextView
+    
+    <Button
+		android:id="@+id/btn_plaza_go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Talk Detail View" />
+        android:text="@string/plaza_go" />
 
-</RelativeLayout>
+    <ScrollView
+        android:id="@+id/sv_curr_talk"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="#ffffff" >
+            <TextView
+		        android:id="@+id/tv_talk_content"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:focusable="false"
+		        android:focusableInTouchMode="false" />
+            <Button
+	            android:id="@+id/btn_talk_write"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/talk_write" />
+            <Button
+	            android:id="@+id/btn_graph_view"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/graph_view" />
+        </LinearLayout>
+    </ScrollView>
+    
+    <kr.or.jaspersoft.android.talkplaza.common.widget.HorizontalListView
+        android:id="@+id/hlv_dw_talk_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+		android:divider="#dbdbdbff"
+		android:dividerHeight="0.1dp"
+		android:focusable="false"
+		android:fadingEdge="none"
+		android:fadingEdgeLength="0px"
+		android:fastScrollEnabled="true"
+		android:cacheColorHint="#00000000"
+		android:persistentDrawingCache="animation|scrolling" />"
+
+</LinearLayout>

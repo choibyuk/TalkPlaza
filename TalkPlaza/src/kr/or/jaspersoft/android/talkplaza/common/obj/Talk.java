@@ -1,5 +1,7 @@
 package kr.or.jaspersoft.android.talkplaza.common.obj;
 
+import java.io.Serializable;
+
 /**
  * <pre>
  * ##################################################################
@@ -7,7 +9,9 @@ package kr.or.jaspersoft.android.talkplaza.common.obj;
  * ##################################################################
  * </pre>
  */
-public final class Talk {
+public final class Talk implements Serializable {
+	private static final long serialVersionUID = 4331622487858437907L;
+	
 	/** 수다 아이디 */
 	public long id = 0l;
 	/** 수다 상위 아이디 */

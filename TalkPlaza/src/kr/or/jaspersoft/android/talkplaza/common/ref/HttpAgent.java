@@ -28,6 +28,16 @@ public final class HttpAgent {
 		talk2.content = "두 번째 대화 내용입니다.";
 		talkList.add(talk2);
 		
+		Talk talk3 = new Talk();
+		talk3.id = 2001l;
+		talk3.content = "세 번째 대화 내용입니다.";
+		talkList.add(talk3);
+		
+		Talk talk4 = new Talk();
+		talk4.id = 3001l;
+		talk4.content = "네 번째 대화 내용입니다.";
+		talkList.add(talk4);
+		
 		return talkList;
 	}
 
